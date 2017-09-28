@@ -35,6 +35,22 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         var ref = window.open('https://dog-pedigree.com', '_self', 'location=no,toolbar=no,zoom=no');
+        
+        ref.addEventListener('exit', function(event){  Exit(); });
+
+        function Exit(){
+                     navigator.notification.confirm(
+                       'Deseja sair da aplicação?',  
+                       function(i){
+                           if(i==2)
+                            {
+                              navigator.app.exitApp(); //This will Close the App
+                            }
+                       },              
+                       'Dog Pedigree',            
+                       'Cancel,Exit'          
+                     );
+        }
         /*ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
@@ -50,5 +66,5 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
 };
