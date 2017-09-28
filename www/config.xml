@@ -60,9 +60,9 @@
     <plugin name="cordova-plugin-globalization" />-->
     <plugin name="cordova-plugin-inappbrowser" />
     <!--<plugin name="cordova-plugin-media" />
-    <plugin name="cordova-plugin-network-information" />
+    <plugin name="cordova-plugin-network-information" />-->
     <plugin name="cordova-plugin-splashscreen" />
-    <plugin name="cordova-plugin-vibration" />-->
+    <!--<plugin name="cordova-plugin-vibration" />-->
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
