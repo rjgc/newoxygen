@@ -36,18 +36,53 @@ var app = {
         app.receivedEvent('deviceready');
         var ref = window.open('https://dog-pedigree.com', '_blank', 'location=no,toolbar=no,zoom=no');
         ref.addEventListener('exit', function(event){
-            alert('teste');
-            navigator.notification.confirm(
+            if (confirm("Deseja sair da aplicação?") == true) {
+                try{
+                    navigator.app.exitApp();
+                }catch(e){
+                    
+                }
+                try{
+                    this.exitApp();
+                }catch(e){
+                    
+                }
+                
+            } else {
+                ref = window.open('https://dog-pedigree.com', '_blank', 'location=no,toolbar=no,zoom=no');
+            }
+            try{
+                navigator.notification.confirm(
                 'Deseja sair da aplicação?',  
-                function(i){
-                    if(i==2)
-                     {
-                       navigator.app.exitApp(); //This will Close the App
-                     }
-                },              
-                'Dog Pedigree',            
-                'Cancel,Exit'          
-            );
+                    function(i){
+                        if(i==2)
+                         {
+                           navigator.app.exitApp(); //This will Close the App
+                         }
+                    },              
+                    'Dog Pedigree',            
+                    'Cancel,Exit'          
+                );
+            }catch(e){
+                
+            }
+            
+            try{
+                this.notification.confirm(
+                'Deseja sair da aplicação?',  
+                    function(i){
+                        if(i==2)
+                         {
+                           this.exitApp(); //This will Close the App
+                         }
+                    },              
+                    'Dog Pedigree',            
+                    'Cancel,Exit'          
+                );
+            }catch(e){
+                
+            }
+           
         });                     
         /*ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
