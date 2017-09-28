@@ -35,7 +35,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         var ref = window.open('https://dog-pedigree.com', '_self', 'location=no,toolbar=yes,zoom=no');
-        ref.addEventListener('exit', function(event){
+       /* ref.addEventListener('exit', function(event){
             exit();
         });
         
@@ -57,7 +57,7 @@ var app = {
                     exit();
                 });
             }
-        }
+        }*/
         /*ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
