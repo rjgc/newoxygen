@@ -34,8 +34,12 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        var ref = window.open('https://dog-pedigree.com', '_self', 'location=no,toolbar=no,zoom=no');
+        var ref = window.open('https://dog-pedigree.com', '_self', 'location=no,toolbar=yes,zoom=no');
         ref.addEventListener('exit', function(event){
+            exit();
+        });
+        
+        function exit() {
             if (confirm("Deseja sair da aplicação?") == true) {
                 try{
                     navigator.app.exitApp();
@@ -47,12 +51,13 @@ var app = {
                 }catch(e){
                     
                 }
-                
             } else {
-                ref.open('https://dog-pedigree.com', '_self', 'location=no,toolbar=no,zoom=no');
+                var ref = ref.open('https://dog-pedigree.com', '_self', 'location=no,toolbar=yes,zoom=no');
+                ref.addEventListener('exit', function(event){
+                    exit();
+                });
             }
-           
-        });                     
+        }
         /*ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
