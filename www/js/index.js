@@ -49,38 +49,7 @@ var app = {
                 }
                 
             } else {
-                ref = window.open('https://dog-pedigree.com', '_blank', 'location=no,toolbar=no,zoom=no');
-            }
-            try{
-                navigator.notification.confirm(
-                'Deseja sair da aplicação?',  
-                    function(i){
-                        if(i==2)
-                         {
-                           navigator.app.exitApp(); //This will Close the App
-                         }
-                    },              
-                    'Dog Pedigree',            
-                    'Cancel,Exit'          
-                );
-            }catch(e){
-                
-            }
-            
-            try{
-                this.notification.confirm(
-                'Deseja sair da aplicação?',  
-                    function(i){
-                        if(i==2)
-                         {
-                           this.exitApp(); //This will Close the App
-                         }
-                    },              
-                    'Dog Pedigree',            
-                    'Cancel,Exit'          
-                );
-            }catch(e){
-                
+                ref.open('https://dog-pedigree.com', '_blank', 'location=no,toolbar=no,zoom=no');
             }
            
         });                     
