@@ -34,23 +34,20 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        var ref = window.open('https://dog-pedigree.com', '_self', 'location=no,toolbar=no,zoom=no');
-        
-        ref.addEventListener('exit', function(event){  Exit(); });
-
-        function Exit(){
-                     navigator.notification.confirm(
-                       'Deseja sair da aplicação?',  
-                       function(i){
-                           if(i==2)
-                            {
-                              navigator.app.exitApp(); //This will Close the App
-                            }
-                       },              
-                       'Dog Pedigree',            
-                       'Cancel,Exit'          
-                     );
-        }
+        var ref = window.open('https://dog-pedigree.com', '_blank', 'location=no,toolbar=no,zoom=no');
+        ref.addEventListener('exit', function(event){
+            navigator.notification.confirm(
+                'Deseja sair da aplicação?',  
+                function(i){
+                    if(i==2)
+                     {
+                       navigator.app.exitApp(); //This will Close the App
+                     }
+                },              
+                'Dog Pedigree',            
+                'Cancel,Exit'          
+            );
+        });                     
         /*ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
