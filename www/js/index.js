@@ -36,6 +36,7 @@ var app = {
         app.receivedEvent('deviceready');
         var ref = window.open('https://dog-pedigree.com', '_blank', 'location=no,toolbar=no,zoom=no');
         ref.addEventListener('exit', function(event){
+            alert('teste');
             navigator.notification.confirm(
                 'Deseja sair da aplicação?',  
                 function(i){
