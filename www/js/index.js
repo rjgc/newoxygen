@@ -34,19 +34,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         //app.receivedEvent('deviceready');
+        navigator.splashscreen.hide();
         var ref = window.open('https://dog-pedigree.com', '_blank', 'location=no,toolbar=yes,zoom=no,closebuttoncaption=Sair');
-        /*ref.addEventListener('exit', function(event){
-            try{
-                    navigator.app.exitApp();
-            }catch(e){
-                
-            }
-            try{
-                this.exitApp();
-            }catch(e){
-                
-            }
-        });*/
 
     },
     // Update DOM on a Received Event
