@@ -35,7 +35,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         var ref = window.open('https://dog-pedigree.com', '_blank', 'location=no,toolbar=yes,zoom=no,closebuttoncaption=Sair');
-        ref.addEventListener('exit', function(event){
+        /*ref.addEventListener('exit', function(event){
             try{
                     navigator.app.exitApp();
             }catch(e){
@@ -46,31 +46,8 @@ var app = {
             }catch(e){
                 
             }
-        });
-        
-        /*function exit() {
-            if (confirm("Deseja sair da aplicação?") == true) {
-                try{
-                    navigator.app.exitApp();
-                }catch(e){
-                    
-                }
-                try{
-                    this.exitApp();
-                }catch(e){
-                    
-                }
-            } else {
-                var ref = ref.open('https://dog-pedigree.com', '_self', 'location=no,toolbar=yes,zoom=no');
-                ref.addEventListener('exit', function(event){
-                    exit();
-                });
-            }
-        }*/
-        /*ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-        ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-        ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-        ref.addEventListener('exit', function(event) { alert(event.type); });*/
+        });*/
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
